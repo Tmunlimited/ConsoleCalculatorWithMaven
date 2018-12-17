@@ -10,4 +10,7 @@ public class Calculator {
 	public double division(int a, int b) {
 		return a/b;
 	}
+	public int produkt(int a, int b) {
+		return a*b;
+	}
 }

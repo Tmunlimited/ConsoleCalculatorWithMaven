@@ -27,5 +27,10 @@ public class CalculatorTest {
 	public void testDivisionZweiPositiveIsOk() {
 		assertTrue(testee.division(8,2)==4);
 	}
+	
+	@Test
+	public void testProduktZweiPositiveIsOk() {
+		assertTrue(testee.produkt(8,2)==16);
+	}
 
 }
