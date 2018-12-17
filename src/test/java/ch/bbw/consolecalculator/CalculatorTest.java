@@ -15,14 +15,17 @@ public class CalculatorTest {
 	
 	@Test
 	public void testSummeZweiPositiveIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.summe(10, 25)==35);
 	}
 	
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
-		testee = new Calculator();
 		assertTrue(testee.subtraktion(25,10)==15);
+	}
+	
+	@Test
+	public void testDivisionZweiPositiveIsOk() {
+		assertTrue(testee.division(8,2)==4);
 	}
 
 }
