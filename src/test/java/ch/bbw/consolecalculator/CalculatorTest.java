@@ -2,10 +2,17 @@ package ch.bbw.consolecalculator;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CalculatorTest {
 	Calculator testee;
+	
+	@Before
+	public void setup() {
+		testee = new Calculator();
+	}
+	
 	@Test
 	public void testSummeZweiPositiveIsOk() {
 		testee = new Calculator();
