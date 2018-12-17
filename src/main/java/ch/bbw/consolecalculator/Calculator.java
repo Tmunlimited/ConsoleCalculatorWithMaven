@@ -7,4 +7,7 @@ public class Calculator {
 	public int subtraktion(int minuend, int subtrahend) {
 		return minuend - subtrahend;
 	}
+	public double division(int a, int b) {
+		return a/b;
+	}
 }
