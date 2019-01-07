@@ -13,10 +13,27 @@ public class CalculatorTest {
 		testee = new Calculator();
 	}
 	
+	// Start Test Summe
 	@Test
 	public void testSummeZweiPositiveIsOk() {
 		assertTrue(testee.summe(10, 25)==35);
 	}
+	
+	@Test
+	public void testSummeEinePositiveUndNegativIsOk() {
+		assertTrue(testee.summe(10, -25)==-15);
+	}
+	@Test
+	public void testSummeEinePositiveUndNullIsOk() {
+		assertTrue(testee.summe(10, 0)==10);
+	}
+	
+	@Test
+	public void testSummeMaxIntPlusPositiveWraps() {
+		assertTrue(testee.summe(Integer.MAX_VALUE, 3)==Integer.MIN_VALUE+2);
+	}
+	
+	// End Test Summe
 	
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
@@ -33,4 +50,13 @@ public class CalculatorTest {
 		assertTrue(testee.produkt(8,2)==16);
 	}
 
+	@Test(expected=ArithmeticException.class)
+	public void testDivisionByZeroException() {
+	    testee.division(5, 0);
+	}
+	
+//	@Test
+//	public void testDivisionByZeroExceptionNotRaised() throws ArithmeticException{
+//		testee.division(5, 0);
+//	}
 }
