@@ -16,7 +16,7 @@ public class App
         System.out.println("==================");
         System.out.println();
         
-        valueA=Integer.MAX_VALUE;
+        valueA=2;
         valueB=3;
         System.out.println("Summe " + valueA + " + " + valueB + " = " + calculator.summe(valueA, valueB));
     }
