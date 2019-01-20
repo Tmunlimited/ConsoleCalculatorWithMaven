@@ -111,6 +111,38 @@ public class CalculatorTest {
 	    testee.division(5, 0);
 	}
 	
+	@Test
+	public void testDivisionReturnsRoundedInt() {
+		assertTrue(testee.division(10,3)==3);
+		assertTrue(testee.division(11,3)==4);
+	}
+	
+	@Test
+	public void testDivisionNegativeZahlReturnsRoundedInt() {
+		assertTrue(testee.division(10,-3)==-3);
+		assertTrue(testee.division(11,-3)==-4);
+	}
+	
+	@Test
+	public void testDivisionEinePositiveUndNegativIsOk() {
+		assertTrue(testee.summe(10, -2)==-5);
+	}
+	
+	@Test
+	public void testDivisionEineNegativUndPositiveIsOk() {
+		assertTrue(testee.summe(-10, 2)==-5);
+	}
+	
+	@Test
+	public void testDivisionNullUndPositiveIsOk() {
+		assertTrue(testee.summe(0, 2)==0);
+	}
+	@Test
+	public void testDivisionZweiNegativeIsOk() {
+		assertTrue(testee.summe(-2, -2)==1);
+	}
+	
+	
 	// End Test Division
 	
 	// Start TEst Produkt
