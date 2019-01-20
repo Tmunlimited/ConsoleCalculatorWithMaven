@@ -143,12 +143,4 @@ public class CalculatorTest {
 	
 	// End Test Division
 	
-	// Start TEst Produkt
-	
-	@Test
-	public void testProduktZweiPositiveIsOk() {
-		assertTrue(testee.produkt(8,2)==16);
-	}
-
-	// End Test Produkt
 }

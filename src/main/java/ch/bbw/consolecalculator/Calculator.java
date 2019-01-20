@@ -18,7 +18,11 @@ public class Calculator {
 	public double division(int a, int b) {
 		return a/b;
 	}
-	public int produkt(int a, int b) {
+	protected int produkt(int a, int b) {
+		long value = (long) a * (long) b;
+		if((value > Integer.MAX_VALUE)||(value < Integer.MIN_VALUE)) {
+			throw new java.lang.ArithmeticException();
+		}
 		return a*b;
 	}
 }
