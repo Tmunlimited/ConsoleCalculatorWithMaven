@@ -29,8 +29,28 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testSummeMaxIntPlusPositiveWraps() {
-		assertTrue(testee.summe(Integer.MAX_VALUE, 3)==Integer.MIN_VALUE+2);
+	public void testSummeZweiNegativIsOk() {
+		assertTrue(testee.summe(-10, -15)==-25);
+	}
+	
+	@Test
+	public void testSummeMinAndPositive() {
+		assertTrue(testee.summe(Integer.MIN_VALUE, 2)==-2147483646);
+	}
+	
+	@Test
+	public void testSummeResultZero() {
+		assertTrue(testee.summe(15, -15)==0);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSummeMaxIntPlusPositiveThrowsException() {
+		testee.summe(Integer.MAX_VALUE, 3);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSummeMinIntPlusNegativeThrowsException() {
+		testee.summe(Integer.MIN_VALUE, -3);
 	}
 	
 	// End Test Summe
@@ -67,10 +87,4 @@ public class CalculatorTest {
 	}
 
 	// End Test Produkt
-	
-	
-//	@Test
-//	public void testDivisionByZeroExceptionNotRaised() throws ArithmeticException{
-//		testee.division(5, 0);
-//	}
 }
