@@ -63,6 +63,40 @@ public class CalculatorTest {
 		assertTrue(testee.subtraktion(25,10)==15);
 	}
 	
+	@Test
+	public void testSubtraktionEinePositiveUndNegativIsOk() {
+		assertTrue(testee.summe(10, -25)==35);
+	}
+	@Test
+	public void testSubtraktionEinePositiveUndNullIsOk() {
+		assertTrue(testee.summe(10, 0)==10);
+	}
+	
+	@Test
+	public void testSubtraktionZweiNegativIsOk() {
+		assertTrue(testee.summe(-10, -15)==5);
+	}
+	
+	@Test
+	public void testSubtraktionMinAndPositive() {
+		assertTrue(testee.summe(Integer.MIN_VALUE, 2)==-2147483646);
+	}
+	
+	@Test
+	public void testSubtraktionResultZero() {
+		assertTrue(testee.summe(15, 15)==0);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSubtraktionMaxIntMinusNegativeThrowsException() {
+		testee.summe(Integer.MAX_VALUE, -3);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSubtraktionMinIntMinusPositiveThrowsException() {
+		testee.summe(Integer.MIN_VALUE, 3);
+	}
+	
 	// End Test Subtraktion
 	
 	// Start Test Division
