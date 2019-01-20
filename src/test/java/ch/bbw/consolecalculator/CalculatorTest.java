@@ -65,36 +65,36 @@ public class CalculatorTest {
 	
 	@Test
 	public void testSubtraktionEinePositiveUndNegativIsOk() {
-		assertTrue(testee.summe(10, -25)==35);
+		assertTrue(testee.subtraktion(10, -25)==35);
 	}
 	@Test
 	public void testSubtraktionEinePositiveUndNullIsOk() {
-		assertTrue(testee.summe(10, 0)==10);
+		assertTrue(testee.subtraktion(10, 0)==10);
 	}
 	
 	@Test
 	public void testSubtraktionZweiNegativIsOk() {
-		assertTrue(testee.summe(-10, -15)==5);
+		assertTrue(testee.subtraktion((-10), (-15))==5);
 	}
 	
 	@Test
-	public void testSubtraktionMinAndPositive() {
-		assertTrue(testee.summe(Integer.MIN_VALUE, 2)==-2147483646);
+	public void testSubtraktionMinAndNegative() {
+		assertTrue(testee.subtraktion(Integer.MIN_VALUE, -2)==-2147483646);
 	}
 	
 	@Test
 	public void testSubtraktionResultZero() {
-		assertTrue(testee.summe(15, 15)==0);
+		assertTrue(testee.subtraktion(15, 15)==0);
 	}
 	
 	@Test(expected=ArithmeticException.class)
 	public void testSubtraktionMaxIntMinusNegativeThrowsException() {
-		testee.summe(Integer.MAX_VALUE, -3);
+		testee.subtraktion(Integer.MAX_VALUE, -3);
 	}
 	
 	@Test(expected=ArithmeticException.class)
 	public void testSubtraktionMinIntMinusPositiveThrowsException() {
-		testee.summe(Integer.MIN_VALUE, 3);
+		testee.subtraktion(Integer.MIN_VALUE, 3);
 	}
 	
 	// End Test Subtraktion
@@ -114,32 +114,30 @@ public class CalculatorTest {
 	@Test
 	public void testDivisionReturnsRoundedInt() {
 		assertTrue(testee.division(10,3)==3);
-		assertTrue(testee.division(11,3)==4);
 	}
 	
 	@Test
 	public void testDivisionNegativeZahlReturnsRoundedInt() {
 		assertTrue(testee.division(10,-3)==-3);
-		assertTrue(testee.division(11,-3)==-4);
 	}
 	
 	@Test
 	public void testDivisionEinePositiveUndNegativIsOk() {
-		assertTrue(testee.summe(10, -2)==-5);
+		assertTrue(testee.division(10, -2)==-5);
 	}
 	
 	@Test
 	public void testDivisionEineNegativUndPositiveIsOk() {
-		assertTrue(testee.summe(-10, 2)==-5);
+		assertTrue(testee.division(-10, 2)==-5);
 	}
 	
 	@Test
 	public void testDivisionNullUndPositiveIsOk() {
-		assertTrue(testee.summe(0, 2)==0);
+		assertTrue(testee.division(0, 2)==0);
 	}
 	@Test
 	public void testDivisionZweiNegativeIsOk() {
-		assertTrue(testee.summe(-2, -2)==1);
+		assertTrue(testee.division((-2), (-2))==1);
 	}
 	
 	
