@@ -35,25 +35,39 @@ public class CalculatorTest {
 	
 	// End Test Summe
 	
+	
+	// Start Test Subtraktion
+	
 	@Test
 	public void testSubtractionZweiPositiveIsOk() {
 		assertTrue(testee.subtraktion(25,10)==15);
 	}
+	
+	// End Test Subtraktion
+	
+	// Start Test Division
 	
 	@Test
 	public void testDivisionZweiPositiveIsOk() {
 		assertTrue(testee.division(8,2)==4);
 	}
 	
+	@Test(expected=ArithmeticException.class)
+	public void testDivisionByZeroException() {
+	    testee.division(5, 0);
+	}
+	
+	// End Test Division
+	
+	// Start TEst Produkt
+	
 	@Test
 	public void testProduktZweiPositiveIsOk() {
 		assertTrue(testee.produkt(8,2)==16);
 	}
 
-	@Test(expected=ArithmeticException.class)
-	public void testDivisionByZeroException() {
-	    testee.division(5, 0);
-	}
+	// End Test Produkt
+	
 	
 //	@Test
 //	public void testDivisionByZeroExceptionNotRaised() throws ArithmeticException{
